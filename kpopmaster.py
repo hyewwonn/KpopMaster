@@ -34,10 +34,19 @@ if qb == 1:
         qnumber = int(input("\n문제 개수 선택\n10개- 1  20개- 2  30개- 3 : "))
     qnumber *= 10
 
+    qhardlist = [""]
+
     qcorrect = 0
     for i in range (1, qnumber+1):
         print("문제", i)
-        print("정답 입력 : ")
+        qanswer = input("정답 입력 : ")
+
+
+
+
+
+
+
 
 elif qb == 2:
     print("\nBINGO")
@@ -232,29 +241,144 @@ elif qb == 2:
           
             _______________________________________________________
             |       |       |       |       |       |       |       |
-            |       |       |       |       |       |       |       |
+            |다시만 | 애상  |오락실 | No.1  |Tell Me|누난 너|아틀란 |
             |   1   |   2   |   3   |   4   |   5   |   6   |   7   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
+            |왜 불러|U R Man| 캔디  |비밀번 |Nobody |로꾸거!|나혼자 |
             |   8   |   9   |  10   |  11   |  12   |  13   |  14   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
+            |토요일 |Electri|좋은 날|Bubble |사랑비 |   A   |잘자요 |
             |  15   |  16   |  17   |  18   |  19   |  20   |  21   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
+            |Lucifer|Sorry, |난리나 |  Sign |  왜   | 행복  |검은 고|
             |  22   |  23   |  24   |  25   |  26   |  27   |  28   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
+            | 커플  | 주문  |내꺼하 |  Gee  |외톨이 |후유증 |내 귀에|
             |  29   |  30   |  31   |  32   |  33   |  34   |  35   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
+            |Shy Boy|U Go Gi|10점 만|Bo Peep|사랑앓 |Mr.Simp|미스터 |
             |  36   |  37   |  38   |  39   |  40   |  41   |  42   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
+            |Kissing| 비밀  |내 남자|태양을 |영원한 |Pretty |내 머리|
             |  43   |  44   |  45   |  46   |  47   |  48   |  49   |
             |_______|_______|_______|_______|_______|_______|_______|
 
         """)
+        while bindex != -1:
+            for i in range(0,7):
+                for j in range(0,7):
+                    print(banswerlist[i][j], end=" ")
+                print("\n")
+
+            # while bindex != 1 and bindex != 2 and bindex != 3:
+            bindex = int(input("\n칸 선택(종료- -1 빙고판 보기- 50) : "))
+            if bindex == -1:
+                break
+            elif bindex == 50:
+                print("""
+
+
+                 ____   ___  _  __     ____ ___ _   _  ____  ___  
+                |___ \ / _ \/ |/ /_   | __ )_ _| \ | |/ ___|/ _ \ 
+                  __) | | | | | '_ \  |  _ \| ||  \| | |  _| | | |
+                 / __/| |_| | | (_) | | |_) | || |\  | |_| | |_| |
+                |_____|\___/|_|\___/  |____/___|_| \_|\____|\___/ 
+        
+            _______________________________________________________
+            |       |       |       |       |       |       |       |
+            |다시만 | 애상  |오락실 | No.1  |Tell Me|누난 너|아틀란 |
+            |   1   |   2   |   3   |   4   |   5   |   6   |   7   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            |왜 불러|U R Man| 캔디  |비밀번 |Nobody |로꾸거!|나혼자 |
+            |   8   |   9   |  10   |  11   |  12   |  13   |  14   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            |토요일 |Electri|좋은 날|Bubble |사랑비 |   A   |잘자요 |
+            |  15   |  16   |  17   |  18   |  19   |  20   |  21   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            |Lucifer|Sorry, |난리나 |  Sign |  왜   | 행복  |검은 고|
+            |  22   |  23   |  24   |  25   |  26   |  27   |  28   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            | 커플  | 주문  |내꺼하 |  Gee  |외톨이 |후유증 |내 귀에|
+            |  29   |  30   |  31   |  32   |  33   |  34   |  35   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            |Shy Boy|U Go Gi|10점 만|Bo Peep|사랑앓 |Mr.Simp|미스터 |
+            |  36   |  37   |  38   |  39   |  40   |  41   |  42   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            |Kissing| 비밀  |내 남자|태양을 |영원한 |Pretty |내 머리|
+            |  43   |  44   |  45   |  46   |  47   |  48   |  49   |
+            |_______|_______|_______|_______|_______|_______|_______|
+
+            
+
+                """)
+                bindex = int(input("\n칸 선택 (종료- -1) : "))
+                if bindex == -1 :
+                    break
+            elif bindex<0 or bindex>50:
+                print("잘못된 입력입니다.")
+
+            print(f"\n{bindex}번 - {bqlist10[bindex-1]} 의 가수는?")
+            banswer = input("한글로 입력, 유닛명 생략 : ")
+            if banswer == balist10[bindex-1]:
+                print("\n정답!")
+                banswerlist[(bindex-1) // 7][((bindex) % 7)-1] = "■"
+            else:
+                print("\n땡!")
+
+            banswercount = 0
+            for i in range(0,7):
+                for j in range(0,7):
+                    if banswerlist[i][j] == "■":
+                        banswercount += 1
+
+            if banswercount == 49:
+                break
+
+
+        if banswerlist[0][0] == "■" and banswerlist[0][1] == "■" and banswerlist[0][2] == "■" and banswerlist[0][3] == "■" and banswerlist[0][4] == "■" and banswerlist[0][5] == "■" and banswerlist[0][6] == "■":
+            bingocount+=1
+        if banswerlist[1][0] == "■" and banswerlist[1][1] == "■" and banswerlist[1][2] == "■" and banswerlist[1][3] == "■" and banswerlist[1][4] == "■" and banswerlist[1][5] == "■" and banswerlist[1][6] == "■":
+            bingocount+=1
+        if banswerlist[2][0] == "■" and banswerlist[2][1] == "■" and banswerlist[2][2] == "■" and banswerlist[2][3] == "■" and banswerlist[2][4] == "■" and banswerlist[2][5] == "■" and banswerlist[2][6] == "■":
+            bingocount+=1
+        if banswerlist[3][0] == "■" and banswerlist[3][1] == "■" and banswerlist[3][2] == "■" and banswerlist[3][3] == "■" and banswerlist[3][4] == "■" and banswerlist[3][5] == "■" and banswerlist[3][6] == "■":
+            bingocount+=1
+        if banswerlist[4][0] == "■" and banswerlist[4][1] == "■" and banswerlist[4][2] == "■" and banswerlist[4][3] == "■" and banswerlist[4][4] == "■" and banswerlist[4][5] == "■" and banswerlist[4][6] == "■":
+            bingocount+=1
+        if banswerlist[5][0] == "■" and banswerlist[5][1] == "■" and banswerlist[5][2] == "■" and banswerlist[5][3] == "■" and banswerlist[5][4] == "■" and banswerlist[5][5] == "■" and banswerlist[5][6] == "■":
+            bingocount+=1
+        if banswerlist[6][0] == "■" and banswerlist[6][1] == "■" and banswerlist[6][2] == "■" and banswerlist[6][3] == "■" and banswerlist[6][4] == "■" and banswerlist[6][5] == "■" and banswerlist[6][6] == "■":
+            bingocount+=1
+
+        if banswerlist[0][0] == "■" and banswerlist[1][0] == "■" and banswerlist[2][0] == "■" and banswerlist[3][0] == "■" and banswerlist[4][0] == "■" and banswerlist[5][0] == "■" and banswerlist[6][0] == "■":
+            bingocount+=1
+        if banswerlist[0][1] == "■" and banswerlist[1][1] == "■" and banswerlist[2][1] == "■" and banswerlist[3][1] == "■" and banswerlist[4][1] == "■" and banswerlist[5][1] == "■" and banswerlist[6][1] == "■":
+            bingocount+=1
+        if banswerlist[0][2] == "■" and banswerlist[1][2] == "■" and banswerlist[2][2] == "■" and banswerlist[3][2] == "■" and banswerlist[4][2] == "■" and banswerlist[5][2] == "■" and banswerlist[6][2] == "■":
+            bingocount+=1
+        if banswerlist[0][3] == "■" and banswerlist[1][3] == "■" and banswerlist[2][3] == "■" and banswerlist[3][3] == "■" and banswerlist[4][3] == "■" and banswerlist[5][3] == "■" and banswerlist[6][3] == "■":
+            bingocount+=1
+        if banswerlist[0][4] == "■" and banswerlist[1][4] == "■" and banswerlist[2][4] == "■" and banswerlist[3][4] == "■" and banswerlist[4][4] == "■" and banswerlist[5][4] == "■" and banswerlist[6][4] == "■":
+            bingocount+=1
+        if banswerlist[0][5] == "■" and banswerlist[1][5] == "■" and banswerlist[2][5] == "■" and banswerlist[3][5] == "■" and banswerlist[4][5] == "■" and banswerlist[5][5] == "■" and banswerlist[6][5] == "■":
+            bingocount+=1
+        if banswerlist[0][6] == "■" and banswerlist[1][6] == "■" and banswerlist[2][6] == "■" and banswerlist[3][6] == "■" and banswerlist[4][6] == "■" and banswerlist[5][6] == "■" and banswerlist[6][6] == "■":
+            bingocount+=1
+
+        if banswerlist[0][0] == "■" and banswerlist[1][1] == "■" and banswerlist[2][2] == "■" and banswerlist[3][3] == "■" and banswerlist[4][4] == "■" and banswerlist[5][5] == "■" and banswerlist[6][6] == "■":
+            bingocount+=1
+        if banswerlist[0][6] == "■" and banswerlist[1][5] == "■" and banswerlist[2][4] == "■" and banswerlist[3][3] == "■" and banswerlist[4][2] == "■" and banswerlist[5][1] == "■" and banswerlist[6][0] == "■":
+            bingocount+=1
+
+        if bingocount == 16:
+            print("""
+                 __        _   _ 
+  _ __  ___ _ _ / _|___ __| |_| |
+ | '_ \/ -_) '_|  _/ -_) _|  _|_|
+ | .__/\___|_| |_| \___\__|\__(_)
+ |_|                 
+            """)
+    print(bingocount, "빙고")
     if byear == 3:
         print("""
                ____   ___ ____  ____    ____ ___ _   _  ____  ___  
@@ -265,29 +389,144 @@ elif qb == 2:
           
             _______________________________________________________
             |       |       |       |       |       |       |       |
-            |       |       |       |       |       |       |       |
-            |       |       |       |       |       |       |       |
+            |다시만 | 애상  |오락실 | No.1  |Tell Me|누난 너|아틀란 |
+            |   1   |   2   |   3   |   4   |   5   |   6   |   7   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
-            |       |       |       |       |       |       |       |
+            |왜 불러|U R Man| 캔디  |비밀번 |Nobody |로꾸거!|나혼자 |
+            |   8   |   9   |  10   |  11   |  12   |  13   |  14   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
-            |       |       |       |       |       |       |       |
+            |토요일 |Electri|좋은 날|Bubble |사랑비 |   A   |잘자요 |
+            |  15   |  16   |  17   |  18   |  19   |  20   |  21   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
-            |       |       |       |       |       |       |       |
+            |Lucifer|Sorry, |난리나 |  Sign |  왜   | 행복  |검은 고|
+            |  22   |  23   |  24   |  25   |  26   |  27   |  28   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
-            |       |       |       |       |       |       |       |
+            | 커플  | 주문  |내꺼하 |  Gee  |외톨이 |후유증 |내 귀에|
+            |  29   |  30   |  31   |  32   |  33   |  34   |  35   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
-            |       |       |       |       |       |       |       |
+            |Shy Boy|U Go Gi|10점 만|Bo Peep|사랑앓 |Mr.Simp|미스터 |
+            |  36   |  37   |  38   |  39   |  40   |  41   |  42   |
             |-------|-------|-------|-------|-------|-------|-------|
-            |       |       |       |       |       |       |       |
-            |       |       |       |       |       |       |       |
+            |Kissing| 비밀  |내 남자|태양을 |영원한 |Pretty |내 머리|
+            |  43   |  44   |  45   |  46   |  47   |  48   |  49   |
             |_______|_______|_______|_______|_______|_______|_______|
 
         """)
+        while bindex != -1:
+            for i in range(0,7):
+                for j in range(0,7):
+                    print(banswerlist[i][j], end=" ")
+                print("\n")
+
+            # while bindex != 1 and bindex != 2 and bindex != 3:
+            bindex = int(input("\n칸 선택(종료- -1 빙고판 보기- 50) : "))
+            if bindex == -1:
+                break
+            elif bindex == 50:
+                print("""
+
+
+               ____   ___ ____  ____    ____ ___ _   _  ____  ___  
+              |___ \ / _ \___ \|___ \  | __ )_ _| \ | |/ ___|/ _ \ 
+                __) | | | |__) | __) | |  _ \| ||  \| | |  _| | | |
+               / __/| |_| / __/ / __/  | |_) | || |\  | |_| | |_| |
+              |_____|\___/_____|_____| |____/___|_| \_|\____|\___/ 
+        
+            _______________________________________________________
+            |       |       |       |       |       |       |       |
+            |다시만 | 애상  |오락실 | No.1  |Tell Me|누난 너|아틀란 |
+            |   1   |   2   |   3   |   4   |   5   |   6   |   7   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            |왜 불러|U R Man| 캔디  |비밀번 |Nobody |로꾸거!|나혼자 |
+            |   8   |   9   |  10   |  11   |  12   |  13   |  14   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            |토요일 |Electri|좋은 날|Bubble |사랑비 |   A   |잘자요 |
+            |  15   |  16   |  17   |  18   |  19   |  20   |  21   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            |Lucifer|Sorry, |난리나 |  Sign |  왜   | 행복  |검은 고|
+            |  22   |  23   |  24   |  25   |  26   |  27   |  28   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            | 커플  | 주문  |내꺼하 |  Gee  |외톨이 |후유증 |내 귀에|
+            |  29   |  30   |  31   |  32   |  33   |  34   |  35   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            |Shy Boy|U Go Gi|10점 만|Bo Peep|사랑앓 |Mr.Simp|미스터 |
+            |  36   |  37   |  38   |  39   |  40   |  41   |  42   |
+            |-------|-------|-------|-------|-------|-------|-------|
+            |Kissing| 비밀  |내 남자|태양을 |영원한 |Pretty |내 머리|
+            |  43   |  44   |  45   |  46   |  47   |  48   |  49   |
+            |_______|_______|_______|_______|_______|_______|_______|
+
+            
+
+                """)
+                bindex = int(input("\n칸 선택 (종료- -1) : "))
+                if bindex == -1 :
+                    break
+            elif bindex<0 or bindex>50:
+                print("잘못된 입력입니다.")
+
+            print(f"\n{bindex}번 - {bqlist10[bindex-1]} 의 가수는?")
+            banswer = input("한글로 입력, 유닛명 생략 : ")
+            if banswer == balist10[bindex-1]:
+                print("\n정답!")
+                banswerlist[(bindex-1) // 7][((bindex) % 7)-1] = "■"
+            else:
+                print("\n땡!")
+
+            banswercount = 0
+            for i in range(0,7):
+                for j in range(0,7):
+                    if banswerlist[i][j] == "■":
+                        banswercount += 1
+
+            if banswercount == 49:
+                break
+
+
+        if banswerlist[0][0] == "■" and banswerlist[0][1] == "■" and banswerlist[0][2] == "■" and banswerlist[0][3] == "■" and banswerlist[0][4] == "■" and banswerlist[0][5] == "■" and banswerlist[0][6] == "■":
+            bingocount+=1
+        if banswerlist[1][0] == "■" and banswerlist[1][1] == "■" and banswerlist[1][2] == "■" and banswerlist[1][3] == "■" and banswerlist[1][4] == "■" and banswerlist[1][5] == "■" and banswerlist[1][6] == "■":
+            bingocount+=1
+        if banswerlist[2][0] == "■" and banswerlist[2][1] == "■" and banswerlist[2][2] == "■" and banswerlist[2][3] == "■" and banswerlist[2][4] == "■" and banswerlist[2][5] == "■" and banswerlist[2][6] == "■":
+            bingocount+=1
+        if banswerlist[3][0] == "■" and banswerlist[3][1] == "■" and banswerlist[3][2] == "■" and banswerlist[3][3] == "■" and banswerlist[3][4] == "■" and banswerlist[3][5] == "■" and banswerlist[3][6] == "■":
+            bingocount+=1
+        if banswerlist[4][0] == "■" and banswerlist[4][1] == "■" and banswerlist[4][2] == "■" and banswerlist[4][3] == "■" and banswerlist[4][4] == "■" and banswerlist[4][5] == "■" and banswerlist[4][6] == "■":
+            bingocount+=1
+        if banswerlist[5][0] == "■" and banswerlist[5][1] == "■" and banswerlist[5][2] == "■" and banswerlist[5][3] == "■" and banswerlist[5][4] == "■" and banswerlist[5][5] == "■" and banswerlist[5][6] == "■":
+            bingocount+=1
+        if banswerlist[6][0] == "■" and banswerlist[6][1] == "■" and banswerlist[6][2] == "■" and banswerlist[6][3] == "■" and banswerlist[6][4] == "■" and banswerlist[6][5] == "■" and banswerlist[6][6] == "■":
+            bingocount+=1
+
+        if banswerlist[0][0] == "■" and banswerlist[1][0] == "■" and banswerlist[2][0] == "■" and banswerlist[3][0] == "■" and banswerlist[4][0] == "■" and banswerlist[5][0] == "■" and banswerlist[6][0] == "■":
+            bingocount+=1
+        if banswerlist[0][1] == "■" and banswerlist[1][1] == "■" and banswerlist[2][1] == "■" and banswerlist[3][1] == "■" and banswerlist[4][1] == "■" and banswerlist[5][1] == "■" and banswerlist[6][1] == "■":
+            bingocount+=1
+        if banswerlist[0][2] == "■" and banswerlist[1][2] == "■" and banswerlist[2][2] == "■" and banswerlist[3][2] == "■" and banswerlist[4][2] == "■" and banswerlist[5][2] == "■" and banswerlist[6][2] == "■":
+            bingocount+=1
+        if banswerlist[0][3] == "■" and banswerlist[1][3] == "■" and banswerlist[2][3] == "■" and banswerlist[3][3] == "■" and banswerlist[4][3] == "■" and banswerlist[5][3] == "■" and banswerlist[6][3] == "■":
+            bingocount+=1
+        if banswerlist[0][4] == "■" and banswerlist[1][4] == "■" and banswerlist[2][4] == "■" and banswerlist[3][4] == "■" and banswerlist[4][4] == "■" and banswerlist[5][4] == "■" and banswerlist[6][4] == "■":
+            bingocount+=1
+        if banswerlist[0][5] == "■" and banswerlist[1][5] == "■" and banswerlist[2][5] == "■" and banswerlist[3][5] == "■" and banswerlist[4][5] == "■" and banswerlist[5][5] == "■" and banswerlist[6][5] == "■":
+            bingocount+=1
+        if banswerlist[0][6] == "■" and banswerlist[1][6] == "■" and banswerlist[2][6] == "■" and banswerlist[3][6] == "■" and banswerlist[4][6] == "■" and banswerlist[5][6] == "■" and banswerlist[6][6] == "■":
+            bingocount+=1
+
+        if banswerlist[0][0] == "■" and banswerlist[1][1] == "■" and banswerlist[2][2] == "■" and banswerlist[3][3] == "■" and banswerlist[4][4] == "■" and banswerlist[5][5] == "■" and banswerlist[6][6] == "■":
+            bingocount+=1
+        if banswerlist[0][6] == "■" and banswerlist[1][5] == "■" and banswerlist[2][4] == "■" and banswerlist[3][3] == "■" and banswerlist[4][2] == "■" and banswerlist[5][1] == "■" and banswerlist[6][0] == "■":
+            bingocount+=1
+
+        if bingocount == 16:
+            print("""
+                 __        _   _ 
+  _ __  ___ _ _ / _|___ __| |_| |
+ | '_ \/ -_) '_|  _/ -_) _|  _|_|
+ | .__/\___|_| |_| \___\__|\__(_)
+ |_|                 
+            """)
+    print(bingocount, "빙고")
         
 
 elif qb == 3:
