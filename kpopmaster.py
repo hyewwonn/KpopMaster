@@ -1,3 +1,11 @@
+from playsound import playsound
+import random
+import time
+import os
+import math
+import multiprocessing
+
+
 print("""
 
 ██╗  ██╗██████╗  ██████╗ ██████╗ 
@@ -33,21 +41,159 @@ if qb == 1:
     while qnumber != 1 and qnumber !=2 and qnumber != 3:
         qnumber = int(input("\n문제 개수 선택\n10개- 1  20개- 2  30개- 3 : "))
     qnumber *= 10
+    print("")
 
-    qhardlist = [""]
+    qhardlist = ["9와4분의3승강장에서너를기다려", "200%", "AfterSchool","AllNight","Bicycle","BloomBloom","DINOSAUR","DumdiDumdi", "FeelSpecial","Illusion",
+    "LION","MAGO","Mr.Chu.", "MYBAG", "NoNoNo", "예뻤어","Overdose","Panorama","TheStealer","그리워하다",
+    "기도","다시여기바닷가","만세", "보랏빛밤", "봄날의기억","소나기","에너제틱","울면안돼","음오아예", "행복"]
+    qhardanswerlist = [["943"],["200퍼센트"],["애프터스쿨"],["올나잇","올나이트"],["바이시클"],["블룸블룸"],["다이노소어"],["덤디덤디"],["필스페셜"],["도깨비불"],
+    ["라이언","라이온"],["마고"],["미스터츄"],["마이백"],["노노노"],["예뻤어"],["중독"],["파노라마"],["더스틸러"],["그하"],
+    ["기도"],["다시여기바닷가"],["만세"],["보랏빛밤"],["봄기"],["소나기"],["에너제틱"],["울면안돼"],["음오아예"],["happiness"]]
 
-    qcorrect = 0
-    for i in range (1, qnumber+1):
-        print("문제", i)
-        qanswer = input("정답 입력 : ")
+    qnormallist = ["Bad Boy","BOSS","Dream Girls","FANCY","Hello Future","LOVE ME LOVE ME","Maria","Mr.Mr.","Oh My God","Polaroid Love",
+    "POP!","Pretty Savage","SO BAD","Something","WANNABE","XOXO","가시나","너 없인 안 된다","너무너무너무","눈누난나",
+    "데칼코마니","두밧두 와리와리","미쳐","벌써 12시","빛나리","삐삐","심쿵해","아주 NICE","영웅","예쁘다"]
+
+    qeasylist = ["After LIKE","ANTIFRAGILE","ASAP","Attention","BANG BANG BANG","Dumb Dumb","Eleven","FEARLESS","HER","HIT",
+    "Hype Boy","ISLAND","Kill This Love","Next Level","Not Shy","Ring Ding Dong","SNEAKERS","WE GO","Yesterday","달라달라",
+    "러시안 룰렛","맛","붐바야","사랑을 했다","살짝 설렜어","아무노래", "오늘부터 우리는","옥탑방","위아래","으르렁"]
+    
+    if qdifficulty == 1:
+
+        qcorrect = 0
+        qscore = 0
+        for i in range (1, qnumber+1):
+            print("문제", i)
+            rd = random.randrange(0, 30)
+            now = os.getcwd()
+            audiopath = now+"\mp3list\상\\"+qhardlist[rd]+".mp3"
+            # print("테스트 출력 : ", audiopath)
+            try:
+                playsound(audiopath)
+            except:
+                print("예외 발생, 패스\n")
+                i = i-1
+                continue
+
+            qha = qhardlist[rd].lower()
+            qanswer = input("정답 입력 : ")
+            qanswer = qanswer.replace(" ","")
+            qanswer = qanswer.lower()
+            qax = 0
+            for j in range (0,len(qhardanswerlist[rd])):
+                if qanswer == qha or qanswer == qhardanswerlist[rd][j]:
+                    qcorrect +=1
+                    print("정답!\n")
+                    break
+                elif qanswer!= qha and qanswer!=qhardanswerlist[rd][j]:
+                    qax =1
+                
+            if qax == 1:
+                print("땡!\n")
+            
+        
+        if qnumber == 10:
+            qscore = qcorrect*10
+        elif qnumber == 20:
+            qscore = qcorrect*5
+        else:
+            qscore = round(qcorrect*3.34)
+
+        if qscore == 100:
+            print("""
+   __ __                 __  ___         __         
+  / //_/__  ___  ___    /  |/  /__ ____ / /____ ____
+ / ,< / _ \/ _ \/ _ \  / /|_/ / _ `(_-</ __/ -_) __/
+/_/|_/ .__/\___/ .__/ /_/  /_/\_,_/___/\__/\__/_/   
+    /_/       /_/   
+
+            """)
+            print(qscore, "점!")
+            print("케이팝 마스터")
+        elif qscore >= 85:
+            print(qscore, "점!")
+            print("케이팝 박사")
+        elif qscore >= 70:
+            print(qscore, "점!")
+            print("케이팝 고인물")
+        elif qscore >= 50:
+            print(qscore, "점!")
+            print("케이팝 중수")
+        elif qscore >= 35:
+            print(qscore, "점!")
+            print("케이팝 하수")
+        else:
+            print(qscore, "점!")
+            print("케이팝 문외한")
 
 
 
+    elif qdifficulty == 2:
+
+        qcorrect = 0
+        qscore = 0
+        for i in range (1, qnumber+1):
+            print("문제", i)
+            rd = random.randrange(0, 30)
+            now = os.getcwd()
+            audiopath = now+"\mp3list\상\\"+qhardlist[rd]+".mp3"
+            print("테스트 출력 : ", audiopath)
+            try:
+                playsound(audiopath)
+            except:
+                print("예외 발생, 패스\n")
+                i = i-1
+                continue
+
+            qha = qhardlist[rd].lower()
+            qanswer = input("정답 입력 : ")
+            qanswer = qanswer.replace(" ","")
+            qanswer = qanswer.lower()
+            for j in range (0,len(qhardanswerlist[rd])):
+                if qanswer == qha or qanswer == qhardanswerlist[rd][j]:
+                    qcorrect +=1
+                    print("정답!\n")
+                    break
+                elif qanswer!= qha and qanswer!=qhardanswerlist:
+                    print("땡!\n")
+
+        if qnumber == 10:
+            qscore = qcorrect*10
+        elif qnumber == 20:
+            qscore = qcorrect*5
+        else:
+            qscore = round(qcorrect*3.34)
+
+        if qscore == 100:
+            print("""
+   __ __                 __  ___         __         
+  / //_/__  ___  ___    /  |/  /__ ____ / /____ ____
+ / ,< / _ \/ _ \/ _ \  / /|_/ / _ `(_-</ __/ -_) __/
+/_/|_/ .__/\___/ .__/ /_/  /_/\_,_/___/\__/\__/_/   
+    /_/       /_/   
+
+            """)
+            print(qscore, "점!")
+            print("케이팝 마스터")
+        elif qscore >= 85:
+            print(qscore, "점!")
+            print("케이팝 박사")
+        elif qscore >= 70:
+            print(qscore, "점!")
+            print("케이팝 고인물")
+        elif qscore >= 50:
+            print(qscore, "점!")
+            print("케이팝 중수")
+        elif qscore >= 35:
+            print(qscore, "점!")
+            print("케이팝 하수")
+        else:
+            print(qscore, "점!")
+            print("케이팝 문외한")
+        
 
 
-
-
-
+#빙고
 elif qb == 2:
     print("\nBINGO")
     byear = 0
@@ -79,6 +225,7 @@ elif qb == 2:
     while byear != 1 and byear !=2 and byear != 3:
         byear = int(input("\n연도 선택\n~2012년- 1  ~2016년- 2  ~2022년- 3 : "))    
 
+    if byear ==1:
         print("""
 
 
@@ -229,9 +376,9 @@ elif qb == 2:
  | .__/\___|_| |_| \___\__|\__(_)
  |_|                 
             """)
-    print(bingocount, "빙고")
+        print(bingocount, "빙고")
 
-    if byear == 2:
+    elif byear == 2:
         print("""
                  ____   ___  _  __     ____ ___ _   _  ____  ___  
                 |___ \ / _ \/ |/ /_   | __ )_ _| \ | |/ ___|/ _ \ 
@@ -378,8 +525,8 @@ elif qb == 2:
  | .__/\___|_| |_| \___\__|\__(_)
  |_|                 
             """)
-    print(bingocount, "빙고")
-    if byear == 3:
+        print(bingocount, "빙고")
+    elif byear == 3:
         print("""
                ____   ___ ____  ____    ____ ___ _   _  ____  ___  
               |___ \ / _ \___ \|___ \  | __ )_ _| \ | |/ ___|/ _ \ 
@@ -526,7 +673,7 @@ elif qb == 2:
  | .__/\___|_| |_| \___\__|\__(_)
  |_|                 
             """)
-    print(bingocount, "빙고")
+        print(bingocount, "빙고")
         
 
 elif qb == 3:
